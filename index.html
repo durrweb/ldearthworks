@@ -282,36 +282,94 @@
   /* ---------- contact ---------- */
   .contact{background:var(--soil-900);color:var(--paper)}
   .contact h2{font-size:clamp(2.1rem,5vw,3.4rem)}
-  .contact-grid{
+  .form{
+    margin-top:2.75rem;
+    max-width:780px;
     display:grid;
-    gap:2.5rem clamp(2rem,6vw,5rem);
+    gap:1.5rem clamp(1.25rem,3vw,2.25rem);
     grid-template-columns:minmax(0,1fr);
-    margin-top:2.5rem;
   }
-  @media (min-width:760px){
-    .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (min-width:680px){
+    .form{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .field-wide,.form-foot{grid-column:1 / -1}
   }
-  .contact-block h3{
-    font-size:1rem;
+
+  .field{display:flex;flex-direction:column;gap:0.45rem;min-width:0}
+  .field label{
+    font-size:0.9375rem;
     font-weight:600;
-    letter-spacing:0;
-    color:var(--marker);
-    margin-bottom:0.6rem;
-  }
-  .contact-block p{color:var(--paper-dim);margin:0}
-  .phone-big{
-    font-family:var(--font-display);
-    font-weight:800;
-    font-size:clamp(2rem,6vw,2.9rem);
-    letter-spacing:-0.03em;
-    text-decoration:none;
     color:var(--paper);
-    display:inline-block;
-    border-bottom:4px solid var(--marker);
-    line-height:1.1;
   }
-  .phone-big:hover{color:var(--marker)}
-  address{font-style:normal}
+  .field .opt{font-weight:400;color:var(--paper-dim)}
+
+  .field input,
+  .field select,
+  .field textarea{
+    font-family:var(--font-body);
+    font-size:1rem;
+    color:var(--paper);
+    background:var(--soil-800);
+    border:2px solid var(--soil-500);
+    border-radius:0;
+    padding:0.75rem 0.85rem;
+    width:100%;
+    min-width:0;
+    transition:border-color .12s ease;
+  }
+  .field textarea{resize:vertical;line-height:1.55}
+  .field input::placeholder,
+  .field textarea::placeholder{color:#8C8577}
+
+  .field input:hover,
+  .field select:hover,
+  .field textarea:hover{border-color:var(--moss-light)}
+
+  .field input:focus-visible,
+  .field select:focus-visible,
+  .field textarea:focus-visible{
+    outline:none;
+    border-color:var(--marker);
+    box-shadow:0 0 0 3px rgba(228,161,27,0.28);
+  }
+
+  .field select{
+    appearance:none;
+    background-image:linear-gradient(45deg,transparent 50%,var(--paper-dim) 50%),linear-gradient(135deg,var(--paper-dim) 50%,transparent 50%);
+    background-position:calc(100% - 20px) calc(50% + 2px),calc(100% - 14px) calc(50% + 2px);
+    background-size:6px 6px,6px 6px;
+    background-repeat:no-repeat;
+    padding-right:2.75rem;
+  }
+  .field select option{background:var(--soil-800);color:var(--paper)}
+
+  .field input[aria-invalid="true"],
+  .field select[aria-invalid="true"]{border-color:#D8603F}
+
+  .field-error{
+    font-size:0.875rem;
+    color:#F0A288;
+  }
+
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+  .form-foot{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:1rem 1.5rem;
+    margin-top:0.25rem;
+  }
+  .call[type="submit"]{cursor:pointer;font-size:1.0625rem}
+  .call[disabled]{opacity:.55;cursor:progress}
+
+  .form-status{
+    margin:0;
+    font-size:0.9688rem;
+    color:var(--paper-dim);
+    max-width:38ch;
+  }
+  .form-status[data-state="ok"]{color:var(--moss-light);font-weight:600}
+  .form-status[data-state="error"]{color:#F0A288}
 
   footer{
     background:var(--soil-900);
@@ -339,7 +397,7 @@
     <div class="wordmark">LD Earthworks<span>,</span> LLC</div>
     <div class="topbar-meta">
       <span>Aberdeen, Washington</span>
-      <a href="tel:+13608886094">(360) 888-6094</a>
+      <a href="#contact">Request a quote</a>
     </div>
   </div>
 </div>
@@ -349,8 +407,8 @@
     <h1>Septic systems put in the ground properly.</h1>
     <p class="hero-lede">Owner-operated excavation out of Aberdeen. We design around what your site and your permit actually allow, install it to county standard, and leave the ground back the way it should be.</p>
     <div class="actions">
-      <a class="call" href="tel:+13608886094">Call (360) 888-6094</a>
-      <p class="actions-note">Talk to Loc directly about your site, permit or bid.</p>
+      <a class="call" href="#contact">Request a quote</a>
+      <p class="actions-note">Send us your site details and Loc will get back to you.</p>
     </div>
   </div>
 </header>
@@ -531,23 +589,74 @@
 <section class="band contact" id="contact" aria-labelledby="contact-heading">
   <div class="wrap">
     <h2 id="contact-heading">Tell us about the site.</h2>
-    <p class="band-intro" style="color:var(--paper-dim)">The fastest way to get a real answer is a phone call. Have your parcel number and, if you have one, your county-approved design handy.</p>
+    <p class="band-intro" style="color:var(--paper-dim)">The more you can tell us about the parcel, the better the answer you will get back. If you already have a county-approved design, say so — it changes what we need to quote.</p>
 
-    <div class="contact-grid">
-      <div class="contact-block">
-        <h3>Phone</h3>
-        <a class="phone-big" href="tel:+13608886094">(360) 888-6094</a>
-        <p style="margin-top:0.9rem">Ask for Loc.</p>
+    <form id="inquiry" class="form" novalidate>
+      <input type="hidden" name="_subject" value="New website inquiry — LD Earthworks">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_replyto" id="replyto">
+
+      <p class="hp" aria-hidden="true">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="_honey" tabindex="-1" autocomplete="off">
+      </p>
+
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
       </div>
 
-      <div class="contact-block">
-        <h3>Shop</h3>
-        <address>
-          <p>5810 Central Park Dr<br>Aberdeen, WA 98520</p>
-        </address>
-        <p style="margin-top:0.9rem">Serving Grays Harbor, Mason, Thurston and Pacific counties.</p>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
       </div>
-    </div>
+
+      <div class="field">
+        <label for="phone">Phone <span class="opt">optional</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
+      </div>
+
+      <div class="field">
+        <label for="county">County</label>
+        <select id="county" name="county" required>
+          <option value="">Choose one</option>
+          <option>Grays Harbor</option>
+          <option>Mason</option>
+          <option>Thurston</option>
+          <option>Pacific</option>
+          <option>Somewhere else</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="parcel">Property address or parcel number</label>
+        <input type="text" id="parcel" name="parcel">
+      </div>
+
+      <div class="field">
+        <label for="work">What do you need done</label>
+        <select id="work" name="work" required>
+          <option value="">Choose one</option>
+          <option>New septic installation</option>
+          <option>Septic replacement or repair</option>
+          <option>Sewer connection</option>
+          <option>Water service line</option>
+          <option>Underground power</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+
+      <div class="field field-wide">
+        <label for="message">Details</label>
+        <textarea id="message" name="message" rows="5" placeholder="Anything that helps: number of bedrooms, whether the lot is cleared, if you have a design or a failing system, your timeline."></textarea>
+      </div>
+
+      <div class="form-foot">
+        <button class="call" type="submit">Send inquiry</button>
+        <p class="form-status" id="status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -564,13 +673,10 @@
   "@type":"GeneralContractor",
   "name":"LD Earthworks, LLC",
   "description":"Septic system installation and sewer, water and power utility connections serving Grays Harbor, Mason, Thurston and Pacific counties in Washington.",
-  "telephone":"+1-360-888-6094",
   "address":{
     "@type":"PostalAddress",
-    "streetAddress":"5810 Central Park Dr",
     "addressLocality":"Aberdeen",
     "addressRegion":"WA",
-    "postalCode":"98520",
     "addressCountry":"US"
   },
   "founder":{"@type":"Person","name":"Loc P. Do"},
@@ -585,7 +691,120 @@
 </script>
 
 <script>
+  /* ------------------------------------------------------------------
+     WHERE THE FORM SENDS TO
+
+     Inquiries go to ldearthworks@gmail.com through FormSubmit, which
+     needs no account and costs nothing.
+
+     ONE-TIME ACTIVATION, required before any message arrives:
+       1. Deploy the site.
+       2. Open the live page and send yourself a test inquiry.
+       3. FormSubmit emails ldearthworks@gmail.com an activation link.
+          Click it. Check the spam folder if it is not in the inbox.
+       4. That test and everything after it lands in the inbox.
+
+     Forms only work on the deployed site, not on a file opened from
+     your own computer.
+
+     LATER, WORTH DOING: once activated, FormSubmit will give you a
+     random-string endpoint that works identically. Swapping it in
+     below keeps the Gmail address out of the page source, where
+     address-harvesting bots can read it.
+  ------------------------------------------------------------------ */
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/ldearthworks@gmail.com";
+
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  const form = document.getElementById('inquiry');
+  const status = document.getElementById('status');
+
+  function clearErrors(){
+    form.querySelectorAll('.field-error').forEach(el => el.remove());
+    form.querySelectorAll('[aria-invalid]').forEach(el => el.removeAttribute('aria-invalid'));
+  }
+
+  function showError(field, text){
+    field.setAttribute('aria-invalid','true');
+    const note = document.createElement('span');
+    note.className = 'field-error';
+    note.textContent = text;
+    field.parentNode.appendChild(note);
+  }
+
+  function validate(){
+    clearErrors();
+    let first = null;
+
+    const checks = [
+      [form.elements.name, v => v.trim().length > 0, 'Add your name so we know who we are quoting.'],
+      [form.elements.email, v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()), 'Add an email we can reply to.'],
+      [form.elements.county, v => v !== '', 'Pick the county the property is in.'],
+      [form.elements.work, v => v !== '', 'Pick the type of work so this reaches the right place.']
+    ];
+
+    for (const [field, test, msg] of checks){
+      if (!test(field.value)){
+        showError(field, msg);
+        if (!first) first = field;
+      }
+    }
+
+    if (first){
+      status.dataset.state = 'error';
+      status.textContent = 'Check the highlighted fields.';
+      first.focus();
+      return false;
+    }
+    return true;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    const button = form.querySelector('button[type="submit"]');
+    const originalLabel = button.textContent;
+
+    /* Reply-To, so hitting reply in Gmail goes back to the customer. */
+    document.getElementById('replyto').value = form.elements.email.value.trim();
+
+    button.disabled = true;
+    button.textContent = 'Sending';
+    status.dataset.state = '';
+    status.textContent = '';
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+
+      /* FormSubmit answers 200 even when it refuses the message — for
+         example while the address is still unconfirmed — and reports
+         the refusal in the body. Trusting the status alone would tell
+         the visitor their inquiry was sent when it was not. */
+      const data = await res.json().catch(() => ({}));
+      const sent = res.ok && (data.success === true || data.success === 'true');
+
+      if (!sent){
+        console.warn('FormSubmit did not accept the submission:', data.message || res.status);
+        throw new Error('not accepted');
+      }
+
+      form.reset();
+      clearErrors();
+      status.dataset.state = 'ok';
+      status.textContent = 'Sent. Loc will get back to you shortly.';
+    } catch (err) {
+      status.dataset.state = 'error';
+      status.textContent = 'That did not go through. Try again in a moment.';
+    } finally {
+      button.disabled = false;
+      button.textContent = originalLabel;
+    }
+  });
 </script>
 
 </body>
