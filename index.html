@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LD Earthworks, LLC — Septic Installation &amp; Utility Connections | Aberdeen, WA</title>
+<meta name="description" content="LD Earthworks, LLC installs gravity, pressure, Oscar XO2 and NuWater septic systems in Grays Harbor, Mason, Thurston and Pacific counties. WOSA certified installer based in Aberdeen, Washington.">
+<meta name="theme-color" content="#17130F">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="LD Earthworks, LLC — Septic Installation &amp; Utility Connections">
+<meta property="og:description" content="WOSA certified septic installation and sewer, water and power connections. Serving Grays Harbor, Mason, Thurston and Pacific counties from Aberdeen, WA.">
+<meta property="og:locale" content="en_US">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%2317130F'/><path d='M8 40h48' stroke='%23E4A11B' stroke-width='5'/><path d='M14 52h36' stroke='%2346604A' stroke-width='5'/></svg>">
+
+<style>
+  :root{
+    color-scheme: only light;
+
+    --soil-900:#17130F;
+    --soil-800:#221B15;
+    --soil-700:#2E251D;
+    --soil-500:#4A3D30;
+    --moss:#46604A;
+    --moss-light:#7B9A7F;
+    --gravel:#D9D5CB;
+    --paper:#E9E8E2;
+    --paper-dim:#C9C6BC;
+    --marker:#E4A11B;
+
+    --wrap: 1120px;
+    --gut: clamp(1.25rem, 5vw, 4rem);
+
+    --font-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+    --font-body:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--soil-900);
+    font-family:var(--font-body);
+    font-size:clamp(1rem,0.97rem + 0.2vw,1.0625rem);
+    line-height:1.6;
+  }
+
+  h1,h2,h3{
+    font-family:var(--font-display);
+    font-weight:800;
+    letter-spacing:-0.025em;
+    line-height:0.98;
+    margin:0;
+    text-wrap:balance;
+  }
+
+  p{margin:0 0 1rem;max-width:62ch}
+
+  a{color:inherit}
+
+  .wrap{
+    max-width:var(--wrap);
+    margin-inline:auto;
+    padding-inline:var(--gut);
+  }
+
+  :where(a,button):focus-visible{
+    outline:3px solid var(--marker);
+    outline-offset:3px;
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    background:var(--soil-900);
+    color:var(--gravel);
+    font-size:0.875rem;
+  }
+  .topbar .wrap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.35rem 1.5rem;
+    align-items:baseline;
+    justify-content:space-between;
+    padding-block:0.7rem;
+  }
+  .wordmark{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:1.0625rem;
+    letter-spacing:0.01em;
+    color:var(--paper);
+  }
+  .wordmark span{color:var(--marker)}
+  .topbar-meta{display:flex;flex-wrap:wrap;gap:0.35rem 1.5rem;color:var(--paper-dim)}
+  .topbar-meta a{text-decoration:none;font-weight:600;color:var(--paper)}
+  .topbar-meta a:hover{color:var(--marker)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--paper);
+    padding-block:clamp(3rem,9vw,6rem) clamp(2rem,5vw,3.25rem);
+  }
+  .hero h1{
+    font-size:clamp(2.9rem,9vw,5.6rem);
+    max-width:15ch;
+  }
+  .hero-lede{
+    font-size:clamp(1.0625rem,1rem + 0.4vw,1.25rem);
+    margin-top:1.5rem;
+    max-width:48ch;
+    color:var(--soil-500);
+  }
+
+  .actions{display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:2rem;align-items:center}
+
+  .call{
+    display:inline-block;
+    background:var(--marker);
+    color:var(--soil-900);
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:1.125rem;
+    letter-spacing:-0.01em;
+    text-decoration:none;
+    padding:0.9rem 1.6rem;
+    border:2px solid var(--soil-900);
+    box-shadow:5px 5px 0 var(--soil-900);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .call:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--soil-900)}
+  .call:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--soil-900)}
+
+  .actions-note{color:var(--soil-500);font-size:0.9375rem;max-width:26ch;margin:0}
+
+  /* ---------- grade line: the surface the site digs below ---------- */
+  .grade{
+    height:14px;
+    background:
+      repeating-linear-gradient(135deg,var(--soil-900) 0 6px,transparent 6px 12px),
+      var(--marker);
+    border-block:2px solid var(--soil-900);
+  }
+
+  /* ---------- cross-section ---------- */
+  .section-cut{
+    background:var(--soil-900);
+    padding-block:clamp(2rem,5vw,3.5rem);
+  }
+  .cut-scroll{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .cut-scroll svg{
+    display:block;
+    width:100%;
+    min-width:700px;
+    height:auto;
+  }
+  .cut-caption{
+    color:var(--paper-dim);
+    font-size:0.9375rem;
+    margin:1.25rem 0 0;
+    max-width:58ch;
+  }
+
+  /* ---------- generic band ---------- */
+  .band{padding-block:clamp(3.25rem,8vw,5.5rem)}
+  .band h2{
+    font-size:clamp(2rem,4.5vw,3.1rem);
+    max-width:18ch;
+  }
+  .band-intro{margin-top:1.1rem;max-width:56ch}
+
+  .band-dark{background:var(--soil-800);color:var(--paper)}
+  .band-dark .band-intro{color:var(--paper-dim)}
+  .band-moss{background:var(--moss);color:#F2F5F1}
+
+  /* ---------- system list ---------- */
+  .systems{
+    list-style:none;
+    margin:2.75rem 0 0;
+    padding:0;
+    border-top:1px solid rgba(233,232,226,0.22);
+  }
+  .systems li{
+    display:grid;
+    grid-template-columns:minmax(0,13rem) minmax(0,1fr);
+    gap:0.4rem 2.5rem;
+    padding-block:1.4rem;
+    border-bottom:1px solid rgba(233,232,226,0.22);
+  }
+  .systems h3{
+    font-size:1.375rem;
+    font-weight:600;
+    letter-spacing:-0.015em;
+    color:var(--marker);
+  }
+  .systems p{margin:0;color:var(--paper-dim);max-width:58ch}
+
+  @media (max-width:640px){
+    .systems li{grid-template-columns:1fr;gap:0.45rem}
+  }
+
+  /* ---------- connections ---------- */
+  .hookups{
+    list-style:none;
+    margin:2.5rem 0 0;
+    padding:0;
+    display:grid;
+    gap:1px;
+    grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
+    background:rgba(23,19,15,0.28);
+    border:1px solid rgba(23,19,15,0.28);
+  }
+  .hookups li{
+    background:var(--moss);
+    padding:1.6rem 1.5rem 1.75rem;
+  }
+  .hookups h3{font-size:1.25rem;font-weight:600;letter-spacing:-0.01em}
+  .hookups p{margin:0.5rem 0 0;font-size:0.9688rem;color:#DDE6DC;max-width:32ch}
+
+  /* ---------- service area ---------- */
+  .area-grid{
+    display:grid;
+    gap:clamp(2rem,5vw,4rem);
+    grid-template-columns:minmax(0,1fr);
+    align-items:start;
+  }
+  @media (min-width:880px){
+    .area-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+  }
+  .counties{
+    list-style:none;
+    margin:0;
+    padding:0;
+    font-family:var(--font-display);
+    font-weight:800;
+    letter-spacing:-0.02em;
+    font-size:clamp(1.75rem,4.5vw,2.6rem);
+    line-height:1.12;
+  }
+  .counties li{display:flex;align-items:baseline;gap:0.75rem}
+  .counties li::before{
+    content:"";
+    flex:none;
+    width:0.6em;
+    height:0.16em;
+    background:var(--marker);
+    transform:translateY(-0.22em);
+  }
+
+  /* ---------- credentials ---------- */
+  .creds{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:1.5rem;
+  }
+  .creds li{
+    border-left:3px solid var(--marker);
+    padding-left:1.1rem;
+  }
+  .creds strong{
+    display:block;
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:1.125rem;
+    letter-spacing:-0.01em;
+  }
+  .creds span{color:var(--soil-500);font-size:0.9688rem}
+  .band-dark .creds span{color:var(--paper-dim)}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--soil-900);color:var(--paper)}
+  .contact h2{font-size:clamp(2.1rem,5vw,3.4rem)}
+  .contact-grid{
+    display:grid;
+    gap:2.5rem clamp(2rem,6vw,5rem);
+    grid-template-columns:minmax(0,1fr);
+    margin-top:2.5rem;
+  }
+  @media (min-width:760px){
+    .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  .contact-block h3{
+    font-size:1rem;
+    font-weight:600;
+    letter-spacing:0;
+    color:var(--marker);
+    margin-bottom:0.6rem;
+  }
+  .contact-block p{color:var(--paper-dim);margin:0}
+  .phone-big{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(2rem,6vw,2.9rem);
+    letter-spacing:-0.03em;
+    text-decoration:none;
+    color:var(--paper);
+    display:inline-block;
+    border-bottom:4px solid var(--marker);
+    line-height:1.1;
+  }
+  .phone-big:hover{color:var(--marker)}
+  address{font-style:normal}
+
+  footer{
+    background:var(--soil-900);
+    color:var(--paper-dim);
+    font-size:0.875rem;
+    border-top:1px solid rgba(233,232,226,0.18);
+  }
+  footer .wrap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem 2rem;
+    justify-content:space-between;
+    padding-block:1.6rem 2rem;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;animation:none !important}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="wordmark">LD Earthworks<span>,</span> LLC</div>
+    <div class="topbar-meta">
+      <span>Aberdeen, Washington</span>
+      <a href="tel:+13608886094">(360) 888-6094</a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Septic systems put in the ground properly.</h1>
+    <p class="hero-lede">Owner-operated excavation out of Aberdeen. We design around what your site and your permit actually allow, install it to county standard, and leave the ground back the way it should be.</p>
+    <div class="actions">
+      <a class="call" href="tel:+13608886094">Call (360) 888-6094</a>
+      <p class="actions-note">Talk to Loc directly about your site, permit or bid.</p>
+    </div>
+  </div>
+</header>
+
+<div class="grade" role="presentation"></div>
+
+<section class="section-cut" aria-labelledby="cut-heading">
+  <div class="wrap">
+    <h2 id="cut-heading" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">A typical gravity septic installation</h2>
+    <div class="cut-scroll">
+      <svg viewBox="0 0 1160 330" role="img" aria-label="Cross-section diagram of a septic installation: waste line from the house runs to a two-compartment tank, then to a distribution box, then out to three gravel drainfield trenches below the surface.">
+        <defs>
+          <pattern id="soil" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+            <line x1="0" y1="0" x2="0" y2="16" stroke="#3B3026" stroke-width="1.4"/>
+          </pattern>
+          <pattern id="gravel" width="12" height="12" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="3" r="1.7" fill="#8C8577"/>
+            <circle cx="9" cy="8" r="1.4" fill="#8C8577"/>
+          </pattern>
+        </defs>
+
+        <!-- subsoil -->
+        <rect x="0" y="86" width="1160" height="244" fill="url(#soil)"/>
+
+        <!-- surface grade -->
+        <line x1="0" y1="86" x2="1160" y2="86" stroke="#E4A11B" stroke-width="3"/>
+        <g stroke="#46604A" stroke-width="2.4" stroke-linecap="round">
+          <path d="M60 86v-9M64 86l5-7M56 86l-5-7"/>
+          <path d="M470 86v-9M474 86l5-7M466 86l-5-7"/>
+          <path d="M700 86v-9M704 86l5-7M696 86l-5-7"/>
+          <path d="M980 86v-9M984 86l5-7M976 86l-5-7"/>
+          <path d="M1108 86v-9M1112 86l5-7M1104 86l-5-7"/>
+        </g>
+
+        <!-- house -->
+        <g fill="none" stroke="#E9E8E2" stroke-width="2.6" stroke-linejoin="round">
+          <path d="M40 86V34l52-24 52 24v52"/>
+          <path d="M78 86V56h28v30"/>
+        </g>
+        <line x1="92" y1="86" x2="92" y2="118" stroke="#E9E8E2" stroke-width="2.6"/>
+
+        <!-- waste line to tank -->
+        <path d="M92 118h46l36 14" fill="none" stroke="#E9E8E2" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- tank -->
+        <g>
+          <rect x="176" y="128" width="228" height="112" fill="#221B15" stroke="#E9E8E2" stroke-width="2.6"/>
+          <line x1="300" y1="128" x2="300" y2="240" stroke="#E9E8E2" stroke-width="2"/>
+          <line x1="176" y1="164" x2="404" y2="164" stroke="#7B9A7F" stroke-width="2" stroke-dasharray="7 6"/>
+          <rect x="204" y="106" width="34" height="22" fill="#221B15" stroke="#E9E8E2" stroke-width="2.2"/>
+          <rect x="336" y="106" width="34" height="22" fill="#221B15" stroke="#E9E8E2" stroke-width="2.2"/>
+        </g>
+
+        <!-- tank to d-box -->
+        <path d="M404 170h74" fill="none" stroke="#E9E8E2" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- distribution box -->
+        <rect x="478" y="150" width="58" height="44" fill="#221B15" stroke="#E9E8E2" stroke-width="2.6"/>
+
+        <!-- laterals -->
+        <g fill="none" stroke="#E9E8E2" stroke-width="3" stroke-linecap="round">
+          <path d="M536 162h60l34-28h330"/>
+          <path d="M536 172h74l40 42h310"/>
+          <path d="M536 182h52l46 92h322"/>
+        </g>
+
+        <!-- drainfield trenches -->
+        <g stroke="#6E6659" stroke-width="2">
+          <rect x="624" y="118" width="472" height="34" fill="url(#gravel)"/>
+          <rect x="644" y="198" width="452" height="34" fill="url(#gravel)"/>
+          <rect x="670" y="258" width="426" height="34" fill="url(#gravel)"/>
+        </g>
+
+        <!-- labels -->
+        <g font-family="IBM Plex Sans, sans-serif" font-size="14.5" fill="#C9C6BC">
+          <text x="40" y="26">House</text>
+          <text x="176" y="264">Two-compartment tank</text>
+          <text x="470" y="216">Distribution box</text>
+          <text x="624" y="108">Drainfield trenches</text>
+          <text x="900" y="316" fill="#8C8577">Native soil, undisturbed</text>
+        </g>
+      </svg>
+    </div>
+    <p class="cut-caption">A gravity install, in section. Fall, tank sizing, trench depth and the soil below the trench are what decide whether a system lasts thirty years or fails in five.</p>
+  </div>
+</section>
+
+<section class="band band-dark" aria-labelledby="install-heading">
+  <div class="wrap">
+    <h2 id="install-heading">Septic installation</h2>
+    <p class="band-intro">WOSA certified installer. We put in new systems, replace failed ones, and handle the excavation, tank set, drainfield and final grade as one job rather than four.</p>
+
+    <ul class="systems">
+      <li>
+        <h3>Gravity</h3>
+        <p>The standard system where the site has the fall and the soil for it. Effluent moves from the tank to the drainfield without a pump, so there is less to maintain and less to fail.</p>
+      </li>
+      <li>
+        <h3>Pressure</h3>
+        <p>For lots that are flat, tight, high-water-table or otherwise short on natural fall. A pump doses the drainfield evenly, which lets a system work on ground that gravity cannot serve.</p>
+      </li>
+      <li>
+        <h3>Oscar XO2</h3>
+        <p>A treatment system for sites where the county requires better effluent quality than a conventional tank produces, or where the available drainfield area is limited.</p>
+      </li>
+      <li>
+        <h3>NuWater</h3>
+        <p>Another approved treatment option we install and set up, often used on small, steep or sensitive parcels near water.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band band-moss" aria-labelledby="util-heading">
+  <div class="wrap">
+    <h2 id="util-heading">Sewer and utility connections</h2>
+    <p class="band-intro">If the ground has to be opened for it, we can do it — new construction, remodels, or tying an existing house into service.</p>
+
+    <ul class="hookups">
+      <li>
+        <h3>Sewer</h3>
+        <p>Side sewer runs and connections to the city main.</p>
+      </li>
+      <li>
+        <h3>Septic</h3>
+        <p>Tank-to-house lines, replacements and repairs.</p>
+      </li>
+      <li>
+        <h3>Water</h3>
+        <p>Service lines from the meter or well to the house.</p>
+      </li>
+      <li>
+        <h3>Power</h3>
+        <p>Trenching and conduit for underground electrical service.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="area-heading">
+  <div class="wrap area-grid">
+    <div>
+      <h2 id="area-heading">Where we work</h2>
+      <p class="band-intro">Licensed to install in four counties, all within reach of the shop in Aberdeen. If your parcel is near the line, call and we will tell you straight whether it is ours to take.</p>
+      <ul class="counties">
+        <li>Grays Harbor</li>
+        <li>Mason</li>
+        <li>Thurston</li>
+        <li>Pacific</li>
+      </ul>
+    </div>
+
+    <div>
+      <ul class="creds">
+        <li>
+          <strong>WOSA certified installer</strong>
+          <span>Certified through the Washington On-Site Sewage Association to install on-site septic systems.</span>
+        </li>
+        <li>
+          <strong>Washington contractor license LDEARE*822K3</strong>
+          <span>Registered construction contractor with the Washington State Department of Labor &amp; Industries. Verify the license any time at the L&amp;I contractor lookup.</span>
+        </li>
+        <li>
+          <strong>Limited liability company, Aberdeen</strong>
+          <span>LD Earthworks, LLC. Principal: Loc P. Do.</span>
+        </li>
+        <li>
+          <strong>Permits and county inspection</strong>
+          <span>We build to the approved design and are there for inspection, so your as-built matches what is in the ground.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="grade" role="presentation"></div>
+
+<section class="band contact" id="contact" aria-labelledby="contact-heading">
+  <div class="wrap">
+    <h2 id="contact-heading">Tell us about the site.</h2>
+    <p class="band-intro" style="color:var(--paper-dim)">The fastest way to get a real answer is a phone call. Have your parcel number and, if you have one, your county-approved design handy.</p>
+
+    <div class="contact-grid">
+      <div class="contact-block">
+        <h3>Phone</h3>
+        <a class="phone-big" href="tel:+13608886094">(360) 888-6094</a>
+        <p style="margin-top:0.9rem">Ask for Loc.</p>
+      </div>
+
+      <div class="contact-block">
+        <h3>Shop</h3>
+        <address>
+          <p>5810 Central Park Dr<br>Aberdeen, WA 98520</p>
+        </address>
+        <p style="margin-top:0.9rem">Serving Grays Harbor, Mason, Thurston and Pacific counties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> LD Earthworks, LLC</span>
+    <span>Washington contractor license LDEARE*822K3</span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"GeneralContractor",
+  "name":"LD Earthworks, LLC",
+  "description":"Septic system installation and sewer, water and power utility connections serving Grays Harbor, Mason, Thurston and Pacific counties in Washington.",
+  "telephone":"+1-360-888-6094",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"5810 Central Park Dr",
+    "addressLocality":"Aberdeen",
+    "addressRegion":"WA",
+    "postalCode":"98520",
+    "addressCountry":"US"
+  },
+  "founder":{"@type":"Person","name":"Loc P. Do"},
+  "areaServed":[
+    {"@type":"AdministrativeArea","name":"Grays Harbor County, WA"},
+    {"@type":"AdministrativeArea","name":"Mason County, WA"},
+    {"@type":"AdministrativeArea","name":"Thurston County, WA"},
+    {"@type":"AdministrativeArea","name":"Pacific County, WA"}
+  ],
+  "knowsAbout":["Septic system installation","Gravity septic systems","Pressure septic systems","Oscar XO2 treatment systems","NuWater treatment systems","Sewer connections","Water service lines","Underground power trenching"]
+}
+</script>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
